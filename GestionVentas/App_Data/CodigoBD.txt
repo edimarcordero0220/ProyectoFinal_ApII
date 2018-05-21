@@ -1,0 +1,37 @@
+﻿CREATE TABLE Gastos (
+	GastoId int primary key identity,	
+	VendedorId int,	
+	Fecha datetime,
+	Concepto varchar(100),
+	Monto float)
+
+	CREATE TABLE Pagos (
+	PagoId int primary key identity,	
+	VendedorId int,	
+	Fecha datetime,
+	Concepto varchar(100),
+	Monto float)
+
+	CREATE TABLE CuadresVendedor (
+	CuadreId int primary key identity,	
+	VendedorId int,	
+	Fecha datetime,
+	Concepto varchar(100),
+	Monto float)
+
+	CREATE TABLE CuadresVendedorDetalle (
+	Id int primary key identity,
+	CuadreId int,
+	Vendido float,
+	Subsidios float,
+	Gastos float,
+	Pagos float,
+	Comision float,
+	Ganancia float,
+	Pendiente float,
+	Monto float)
+
+
+	ALTER TABLE Vendedores DROP COLUMN PorcientoComision1; 
+
+ALTER TABLE Vendedores ADD PorcientoComision3 int NOT NULL default ('')
